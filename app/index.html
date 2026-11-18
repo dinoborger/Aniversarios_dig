@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#183153"><title>Aniversários Pro</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"></head>
+<body><main><header><div><h1>🎂 Aniversários Pro</h1><p>Gestão de aniversários no Android</p></div><span id="state">Local</span></header>
+<section class="panel"><h2 id="formtitle">Adicionar aniversário</h2><form id="form">
+<label>Nome <input id="nome" required maxlength="120" autocomplete="name"></label>
+<label>Data de nascimento <input id="data" type="date" required></label>
+<label class="check"><input id="ativo" type="checkbox" checked> Receber avisos</label>
+<div class="actions"><button type="submit" id="save">Guardar</button><button type="button" id="cancel" class="secondary" hidden>Cancelar edição</button></div>
+</form></section>
+<section class="panel"><div class="line"><h2>Registos <small id="count"></small></h2><input id="search" placeholder="Pesquisar nome" aria-label="Pesquisar"></div><div id="records"></div></section>
+<section class="panel"><h2>Importar e exportar</h2><p>Os registos são guardados neste dispositivo. Para ativar os avisos automáticos, sincroniza o CSV com o repositório privado.</p>
+<div class="actions"><button id="export" type="button">Exportar CSV</button><label class="file">Importar CSV <input id="import" type="file" accept=".csv,text/csv" hidden></label></div></section>
+<section class="panel"><h2>Sincronizar com GitHub</h2><p class="hint">Utiliza um token fine-grained com acesso <strong>Contents: Read and write</strong> apenas ao repositório privado. O token não é guardado e desaparece ao fechar/recarregar a página.</p>
+<label>Utilizador / organização <input id="owner" placeholder="ex.: dinoborger" autocomplete="off"></label>
+<label>Repositório <input id="repo" placeholder="aniversarios-pro" autocomplete="off"></label>
+<label>Branch <input id="branch" value="main" autocomplete="off"></label>
+<label>Token GitHub <input id="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+<div class="actions"><button id="pull" type="button" class="secondary">Carregar do GitHub</button><button id="push" type="button">Guardar no GitHub</button></div>
+<p id="feedback" role="status" aria-live="polite"></p></section>
+<footer>Datas guardadas localmente; não publiques o CSV com dados pessoais num site público. 29 de fevereiro: avisos em 28 de fevereiro nos anos não bissextos.</footer></main>
+<script src="app.js"></script></body></html>
